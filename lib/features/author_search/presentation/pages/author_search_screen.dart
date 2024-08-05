@@ -24,10 +24,9 @@ class _AuthorSearchScreenState extends State<AuthorSearchScreen> {
             authorSearchBarInitial(context, authorSearchController),
             const Expanded(
                 child: Center(
-                  child: SizedBox(
-                      height: 41, width: 41, child: CircularProgressIndicator()),
-                )
-            ),
+              child: SizedBox(
+                  height: 41, width: 41, child: CircularProgressIndicator()),
+            )),
           ],
         );
       }
@@ -69,13 +68,13 @@ class _AuthorSearchScreenState extends State<AuthorSearchScreen> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
-                          context.read<SkeletonCubit>().goToAuthorPage(state.data[index].id, state.data[index].name);
+                          context.read<SkeletonCubit>().goToAuthorPage(
+                              state.data[index].id, state.data[index].name);
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                            border: Border.all(
-                                width: 2, color: Colors.black),
+                            color: Colors.white,
+                            border: Border.all(width: 2, color: Colors.black),
                           ),
                           child: SizedBox(
                             height: 183,

@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/skeleton_cubit.dart';
 
-appBarForAuthorPage(BuildContext context){
+appBarForAuthorPage(BuildContext context) {
   return AppBar(
     elevation: 0,
     centerTitle: true,

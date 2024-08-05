@@ -20,7 +20,7 @@ authorSearchBarInitial(
   );
 }
 
-apiError(){
+apiError() {
   return Padding(
     padding: const EdgeInsets.only(top: 197, left: 17, right: 17),
     child: Column(
@@ -48,6 +48,7 @@ apiError(){
     ),
   );
 }
+
 commonRowSearch(
     BuildContext context, TextEditingController authorSearchController) {
   return Row(

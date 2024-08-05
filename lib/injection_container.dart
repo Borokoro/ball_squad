@@ -13,29 +13,36 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:requests_inspector/requests_inspector.dart';
 
-final locator=GetIt.instance;
+final locator = GetIt.instance;
 
-void setupLocator(){
-
+void setupLocator() {
   //cubit
   locator.registerFactory(() => SkeletonCubit());
 
   //bloc
-  locator.registerFactory(() => AuthorSearchBloc(fetchAuthorSearchUseCase: locator()));
-  locator.registerFactory(() => AuthorBooksBloc(fetchAuthorBooksUseCase: locator()));
+  locator.registerFactory(
+      () => AuthorSearchBloc(fetchAuthorSearchUseCase: locator()));
+  locator.registerFactory(
+      () => AuthorBooksBloc(fetchAuthorBooksUseCase: locator()));
 
   //use-cases
-  locator.registerLazySingleton(() => FetchAuthorSearchUseCase(authorSearchRepository: locator()));
-  locator.registerLazySingleton(() => FetchAuthorBooksUseCase(authorBooksRepository: locator()));
+  locator.registerLazySingleton(
+      () => FetchAuthorSearchUseCase(authorSearchRepository: locator()));
+  locator.registerLazySingleton(
+      () => FetchAuthorBooksUseCase(authorBooksRepository: locator()));
 
   //repositories
-  locator.registerLazySingleton<AuthorSearchRepository>(() => AuthorSearchRepositoryImpl(authorSearchRemoteDataSource: locator()));
-  locator.registerLazySingleton<AuthorBooksRepository>(() => AuthorBooksRepositoryImpl(authorBooksRemoteDataSource: locator()));
+  locator.registerLazySingleton<AuthorSearchRepository>(() =>
+      AuthorSearchRepositoryImpl(authorSearchRemoteDataSource: locator()));
+  locator.registerLazySingleton<AuthorBooksRepository>(
+      () => AuthorBooksRepositoryImpl(authorBooksRemoteDataSource: locator()));
 
   //data-sources
-  locator.registerLazySingleton<AuthorSearchRemoteDataSource>(() => AuthorSearchRemoteDataSourceImpl(dio: locator()));
-  locator.registerLazySingleton<AuthorBooksRemoteDataSource>(() => AuthorBooksRemoteDataSourceImpl(dio: locator()));
+  locator.registerLazySingleton<AuthorSearchRemoteDataSource>(
+      () => AuthorSearchRemoteDataSourceImpl(dio: locator()));
+  locator.registerLazySingleton<AuthorBooksRemoteDataSource>(
+      () => AuthorBooksRemoteDataSourceImpl(dio: locator()));
 
   locator.registerLazySingleton(
-          () => Dio()..interceptors.add(RequestsInspectorInterceptor()));
+      () => Dio()..interceptors.add(RequestsInspectorInterceptor()));
 }
