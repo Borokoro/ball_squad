@@ -49,13 +49,13 @@ and launch it.
 1. You have to install IDE. This project was created using Android Studio IDE and I highly recommend it. Go to the website [here](https://developer.android.com/studio) and follow their steps to install it.
 2. After you install your IDE of choice you have to install Flutter framework.  Yo can do that by adding Flutter plugin in Android Studio. Alternatively you can go to the website [here](https://docs.flutter.dev/get-started/install) and follow their steps to install it.
 3. Install git bash or github desktop. You can do this by going to this [website](https://git-scm.com/downloads) to download git bash or to this [website](https://desktop.github.com/download/) to download github desktop.
-4. Clone the repository using the code below:
+4. Clone the repository using the command:
     ```sh
     git clone https://github.com/Borokoro/ball_squad.git
     ```
    or clone this repository from your github desktop.
 5. Open the project
-6. Use this commands in your project file:
+6. Use these commands in your project file:
     ```
     flutter upgrade
     flutter pub get
