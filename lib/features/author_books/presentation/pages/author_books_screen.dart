@@ -31,8 +31,31 @@ class _AuthorBooksScreenState extends State<AuthorBooksScreen> {
         );
       }
       if (state is AuthorBooksError) {
-        return Center(
-          child: Text('Error: ${state.message}'),
+        return Padding(
+          padding: const EdgeInsets.only(top: 197, left: 17, right: 17),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 62,
+                height: 62,
+                child: Image.asset('assets/icons/dead.png'),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                  "We couldn't retrieve data. Check your internet connection and try again",
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Roboto',
+                    color: Color(0xff262424),
+                    fontSize: 18,
+                  )),
+            ],
+          ),
         );
       }
       return Padding(
