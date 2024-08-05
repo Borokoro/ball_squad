@@ -32,8 +32,11 @@ class _AuthorSearchScreenState extends State<AuthorSearchScreen> {
         );
       }
       if (state is AuthorSearchError) {
-        return Center(
-          child: Text('Error: ${state.message}'),
+        return Column(
+          children: [
+            searchBarLoaded(context, authorSearchController),
+            apiError(),
+          ],
         );
       }
       if (state is AuthorSearchInitialState) {

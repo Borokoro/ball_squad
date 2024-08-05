@@ -20,6 +20,34 @@ authorSearchBarInitial(
   );
 }
 
+apiError(){
+  return Padding(
+    padding: const EdgeInsets.only(top: 197, left: 17, right: 17),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: 62,
+          height: 62,
+          child: Image.asset('assets/icons/dead.png'),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text(
+            "We couldn't retrieve data. Check your internet connection and try again",
+            softWrap: true,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Roboto',
+              color: Color(0xff262424),
+              fontSize: 18,
+            )),
+      ],
+    ),
+  );
+}
 commonRowSearch(
     BuildContext context, TextEditingController authorSearchController) {
   return Row(
@@ -71,6 +99,8 @@ initialStateView() {
           size: 80.0,
         ),
         Text('Start typing to find a particular author.',
+            textAlign: TextAlign.center,
+            softWrap: true,
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontFamily: 'Roboto',
@@ -140,6 +170,7 @@ noResultsFound() {
         const Text(
             'There is no author with that name in our database. Check the spelling and try again.',
             softWrap: true,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontFamily: 'Roboto',
