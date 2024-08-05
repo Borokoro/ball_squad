@@ -45,7 +45,7 @@ given name, the application will display an appropriate message on the screen.
 You can download apk file from apk folder that is inside this project. Simply download the apk from github, install it on you mobile device **with android system**
 and launch it.
 
-### Alternatively yo can do the following steps:
+### Alternatively you can do the following steps:
 1. You have to install IDE. This project was created using Android Studio IDE and I highly recommend it. Go to the website [here](https://developer.android.com/studio) and follow their steps to install it.
 2. After you install your IDE of choice you have to install Flutter framework.  Yo can do that by adding Flutter plugin in Android Studio. Alternatively you can go to the website [here](https://docs.flutter.dev/get-started/install) and follow their steps to install it.
 3. Install git bash or github desktop. You can do this by going to this [website](https://git-scm.com/downloads) to download git bash or to this [website](https://desktop.github.com/download/) to download github desktop.
