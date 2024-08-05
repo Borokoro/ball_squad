@@ -18,8 +18,8 @@ This application uses open API that you can find under this [link](https://openl
 
 ### Finding authors
 
-When you launch the program, a starting page with search bar will be displayed. Simply write down author's name and press the "submit" button on your keyboard
-like in example below to look for an author:
+When you launch the program, a starting page with search bar will be displayed. Simply write down author's name and press the "submit" button on your keyboard,
+like in example below, to look for an author:
 
 ![plot](./assets/readMeFiles/authorSearch.png)
 
@@ -42,20 +42,20 @@ given name, the application will display an appropriate message on the screen.
 
 ## Installation
 
-You can download apk file from apk folder that is inside this project. Simply download the apk from github, install it on you mobile device *with android system*
+You can download apk file from apk folder that is inside this project. Simply download the apk from github, install it on you mobile device **with android system**
 and launch it.
 
 ### Alternatively yo can do the following steps:
 1. You have to install IDE. This project was created using Android Studio IDE and I highly recommend it. Go to the website [here](https://developer.android.com/studio) and follow their steps to install it.
 2. After you install your IDE of choice you have to install Flutter framework.  Yo can do that by adding Flutter plugin in Android Studio. Alternatively you can go to the website [here](https://docs.flutter.dev/get-started/install) and follow their steps to install it.
-3. Install git bash or github desktop. You can do this by going to this [website](https://git-scm.com/downloads) to download git bash or to this[website](https://desktop.github.com/download/) to download github desktop.
+3. Install git bash or github desktop. You can do this by going to this [website](https://git-scm.com/downloads) to download git bash or to this [website](https://desktop.github.com/download/) to download github desktop.
 4. Clone the repository using the code below:
     ```sh
-    git clone https://github.com/Borokoro/people_management.git
+    git clone https://github.com/Borokoro/ball_squad.git
     ```
    or clone this repository from your github desktop.
 5. Open the project
-6. Use the commands in your project file:
+6. Use this commands in your project file:
     ```
     flutter upgrade
     flutter pub get
