@@ -6,8 +6,7 @@ import 'package:routemaster/routemaster.dart';
 class Routes{
   static final RouteMap onBoardingCompleteRouteMap = RouteMap(routes: {
     AuthorSearchScreen.route: (route) => const MaterialPage<dynamic>(child: AuthorSearchScreen()),
-    AuthorBooksScreen.route: (route) =>  MaterialPage(child: AuthorBooksScreen(authorId: route.pathParameters['id'],
-      authorName: route.pathParameters['authorName'])),
+    AuthorBooksScreen.route: (route) =>  MaterialPage(child: AuthorBooksScreen(index: int.parse(route.pathParameters['index']!),)),
   });
 
   static final RouteMap onboardingNotCompletedRouteMap = RouteMap(routes: const {});

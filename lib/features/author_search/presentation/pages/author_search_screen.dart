@@ -72,7 +72,7 @@ class _AuthorSearchScreenState extends State<AuthorSearchScreen> {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: () {
-                              Routemaster.of(context).push('${AuthorBooksScreen.route}/${state.data[index].id}/${state.data[index].name}');
+                              Routemaster.of(context).push('/author_books/$index');
                             },
                             child: Container(
                               decoration: BoxDecoration(

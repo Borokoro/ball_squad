@@ -1,25 +1,31 @@
 import 'package:ball_squad/features/author_books/presentation/bloc/author_books_bloc.dart';
 import 'package:ball_squad/features/author_books/presentation/widgets/author_books_widgets.dart';
+import 'package:ball_squad/features/author_search/presentation/bloc/author_search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthorBooksScreen extends StatefulWidget {
-  final String? authorName;
-  final String? authorId;
-  static const route='/author_books';
+  final int index;
+  static const route='/author_books/:index';
   const AuthorBooksScreen(
-      {super.key, this.authorName, this.authorId});
+      {super.key, required this.index});
 
   @override
   State<AuthorBooksScreen> createState() => _AuthorBooksScreenState();
 }
 
 class _AuthorBooksScreenState extends State<AuthorBooksScreen> {
+  late String authorName;
   @override
   void initState() {
-    context
-        .read<AuthorBooksBloc>()
-        .add(FetchAuthorBooksEvent(authorId: widget.authorId ?? ''));
+    final stateAuthorSearch=context.read<AuthorSearchBloc>().state;
+    if(stateAuthorSearch is AuthorSearchLoaded){
+      authorName=stateAuthorSearch.data[widget.index].name;
+      context.read<AuthorBooksBloc>().add(FetchAuthorBooksEvent(authorId: stateAuthorSearch.data[widget.index].id));
+    }
+    else{
+      authorName="Error";
+    }
     super.initState();
   }
 
@@ -43,7 +49,7 @@ class _AuthorBooksScreenState extends State<AuthorBooksScreen> {
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
                   return Text(
-                    "${widget.authorName ?? 'Error'}'s books:",
+                    "$authorName's books:",
                     softWrap: true,
                     style: const TextStyle(
                       fontFamily: 'Roboto',
