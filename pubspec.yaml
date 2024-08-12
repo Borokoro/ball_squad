@@ -43,6 +43,7 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.5.0+1
   requests_inspector: ^4.0.4
+  routemaster: ^1.0.1
 
 dev_dependencies:
   flutter_test:
