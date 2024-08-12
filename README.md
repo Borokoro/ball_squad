@@ -76,6 +76,7 @@ and launch it.
 - [dartz](https://pub.dev/packages/dartz)
 - [dio](https://pub.dev/packages/dio)
 - [requests_inspector](https://pub.dev/packages/requests_inspector)
+- [routemaster](https://pub.dev/packages/routemaster)
 
 ## Possible improvements
 
